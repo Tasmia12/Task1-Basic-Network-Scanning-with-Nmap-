@@ -21,18 +21,19 @@ This port is used by the
 Simple Mail Transfer Protocol (SMTP) for sending and receiving email. An open SMTP port is normal for a mail server but can be exploited for spam relaying or other malicious activities if not properly configured.
 
 80/tcp	http	Apache httpd 2.2.8	
-This is the standard port for 
-Hypertext Transfer Protocol (HTTP), serving web pages. The presence of 
-Apache httpd 2.2.8 indicates a web server is running. This version is outdated and may contain known vulnerabilities.
+This is the standard port for Hypertext Transfer Protocol (HTTP), serving web pages. The presence of Apache httpd 2.2.8 indicates a web server is running. This version is outdated and may contain known vulnerabilities.
+
 139/tcp & 445/tcp	netbios-ssn	Samba smbd 3.X - 4.X	
 These ports are used by Samba, which provides file and print services for clients. An outdated Samba version can have vulnerabilities, such as the Shellshock bug, that could allow for remote code execution.
-3306/tcp	mysql	MySQL 5.0.51a	
-This is the default port for the MySQL database.
+
+3306/tcp	mysql	MySQL 5.0.51a	This is the default port for the MySQL database.
 The open port indicates that a database is accessible on the network, which could be a target for attackers seeking to access or manipulate data.
+
 5432/tcp	postgresql	PostgreSQL DB 8.3.0 - 8.3.7	
-This port is used by the PostgreSQL database. 
-Similar to MySQL, this open port makes the database potentially vulnerable to exploitation if it is not properly secured.
+This port is used by the PostgreSQL database. Similar to MySQL, this open port makes the database potentially vulnerable to exploitation if it is not properly secured.
+
 1524/tcp	bindshell	Metasploitable root shell	This is a highly critical finding. A bind shell is a type of backdoor that listens on a port, providing remote command execution. The fact that it's identified as a Metasploitable root shell indicates it's a known vulnerability designed for exploitation.
+
 5900/tcp	vnc	VNC (protocol 3.3)		Virtual Network Computing (VNC) is a remote desktop protocol. An open VNC port can allow an attacker to gain full graphical access to the system if a weak or no password is in place.
 
 Summary of Findings
